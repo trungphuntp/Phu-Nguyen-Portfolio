@@ -1,0 +1,105 @@
+@use "./mixins" as m;
+
+:root {
+  /* MaxWidth Of Page, Container-Fluid, Container, Gutter*/
+
+  /* Duration, Delay, Transition*/
+  --duration-animation: 0.2s;
+  --timing-animation: ease-in-out;
+
+  /* Colors Variable Demo*/
+  --green-color: #1dbf73;
+  --filter-green-color: brightness(0) saturate(100%) invert(54%) sepia(61%)
+    saturate(566%) hue-rotate(100deg) brightness(100%) contrast(88%);
+  --white-color: #ffffff;
+
+  --bg-page: #fff;
+  --bg-page-2: #f0fdf6;
+
+  --color-border-grey: #dadbdd;
+
+  // btn
+  --btn-text-color: #fff;
+  --btn-bg-color: #000;
+  --header-btn: 52px;
+  --text-btn: 14px;
+
+  // text
+  --text-color-body: #555;
+  --text-color-body-2: #000;
+
+  //   --text-color-body-2: #74767e;
+  //   --text-color-body-3: #404145;
+  //   --text-color-body-4: #62646a;
+
+  //   --text-color-header: #74767e;
+  // // Fontsize - Lineheight Variable Demo
+
+  --fz-body-1: 1.6rem;
+  --lh-body-1: 1.5;
+  --ls-body-1: 0rem;
+
+  --fz-header: 1.6rem;
+  --lh-header: 1.5;
+  --ls-header: 0rem;
+
+  --fz-h1: 3.2rem;
+  --lh-h1: 1.5;
+  --ls-h1: 0rem;
+
+  --fz-h2: 4.8rem;
+  --lh-h2: 1.5;
+  --ls-h2: 0rem;
+
+  // // font family
+
+  // General Variable Demo
+  --header-height: 170px;
+  --scroll-header-height: 70px;
+
+  // // Responsive
+  @include m.maxW(1400px) {
+    // --max-width-container: calc(1130px + calc(var(--pd-container) * 2));
+  }
+
+  @include m.md {
+    // --container-max-width: 1140px;
+    // --fz-h1: 3.8rem;
+  }
+
+  @include m.lg {
+    // --pd-container: 24px;
+  }
+
+  @include m.sm {
+    --fz-h1: 2.8rem;
+    --fz-h2: 3.8rem;
+    --header-height: 80px;
+    --header-btn: 42px;
+  }
+  @include m.xs {
+    // --height-header: 80px;
+
+    //     --container-max-width: 100%; // hoặc max-width: 100% tuỳ yêu cầu
+    //     --gutter: 16px;
+
+    //     // Fontsize - Lineheight Variable Demo
+    //     --fz-h1: 3.8rem;
+    //     --lh-h1: 1.211;
+
+    //     --fz-h2: 2.8rem;
+    //     --lh-h2: 1.286;
+
+    //     --fz-h3: 2.2rem;
+
+    //     --fz-label: 1.4rem;
+    //     --lh-label: 1.29;
+    //     --ls-label: 0.07rem;
+
+    //     --fz-body-1: 1.6rem;
+    //     --lh-body-1: 1.63;
+    // }
+    // @include xxs {
+    //     --container-max-width: 100%;
+  }
+}

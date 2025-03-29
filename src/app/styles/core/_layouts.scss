@@ -1,0 +1,47 @@
+html {
+  font-size: 62.5%; // 1rem = 10px
+  scroll-behavior: smooth;
+}
+body {
+  scroll-behavior: smooth;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--bg-page);
+  font-size: var(--fz-body-1);
+  line-height: var(--lh-body-1);
+  letter-spacing: var(--ls-body-1);
+  color: var(--text-color-body);
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  // @include customscroll(4px, var(--blue-color), var(--primary-color));
+
+  &.--disable-scroll {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  main {
+    position: relative;
+  }
+}
+::selection {
+  background-color: var(--green-color);
+  color: #fff;
+}
+// scroll
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--green-color);
+  border-radius: 999px;
+}

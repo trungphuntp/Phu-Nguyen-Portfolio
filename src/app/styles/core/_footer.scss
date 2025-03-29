@@ -1,0 +1,26 @@
+@use "./mixins" as m;
+
+.footer {
+  &__menu {
+    &-item {
+      transition: var(--duration-animation);
+      transition-timing-function: var(--timing-animation);
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: var(--green-color);
+        transition: var(--duration-animation);
+        transition-timing-function: var(--timing-animation);
+        transform: scaleX(0);
+      }
+      &:hover {
+        color: var(--green-color);
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}

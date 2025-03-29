@@ -1,0 +1,185 @@
+@use "./mixins" as m;
+
+.sub-heading {
+  @apply capitalize;
+}
+.h1-heading {
+  @apply [font-size:var(--fz-h1)] leading-[var(--lh-h1)] tracking-[var(--ls-h1)];
+}
+.h2-heading {
+  @apply [font-size:var(--fz-h2)] leading-[var(--lh-h2)] tracking-[var(--ls-h2)];
+}
+.textbox {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  .h2-heading {
+    margin-top: 4px;
+    font-weight: 700;
+    color: var(--text-color-body-2);
+  }
+}
+
+.btn {
+  @apply h-[var(--header-btn)] px-[16px] text-[var(--btn-text-color)] bg-[var(--btn-bg-color)] rounded-[999px] [font-size:var(--text-btn)] cursor-pointer outline-0 flex items-center justify-center;
+  font-weight: 500;
+  transition-timing-function: var(--timing-animation);
+  transition: var(--duration-animation);
+
+  &.primary:hover {
+    opacity: 0.7;
+  }
+  &.outline {
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+  }
+  &.outline:hover {
+    background: var(--green-color);
+    color: #fff;
+    border-color: var(--green-color);
+  }
+}
+
+.icon {
+  img {
+    transition: var(--duration-animation);
+    transition-timing-function: var(--timing-animation);
+  }
+  &.black:hover {
+    img {
+      filter: brightness(0) saturate(100%) invert(78%) sepia(13%)
+        saturate(4191%) hue-rotate(92deg) brightness(83%) contrast(77%);
+    }
+  }
+}
+.burgerMenuWrapper {
+  position: relative;
+  width: 34px;
+  height: 24px;
+
+  // light
+  &.light {
+    .burgerMenu {
+      &__line {
+        background: #fff;
+      }
+    }
+    .dropdownMenu {
+      background: #000;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        top: 160%;
+      }
+      &__menuItem {
+        font-size: 2.2rem;
+        display: inline-block;
+        padding: 8px 16px;
+        width: 100%;
+        transition: var(--duration-animation);
+        transition-timing-function: var(--timing-animation);
+        &:hover {
+          color: var(--green-color);
+        }
+      }
+    }
+  }
+
+  // normal
+  .burgerMenu {
+    cursor: pointer;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    &.isShow {
+      opacity: 1;
+      visibility: visible;
+    }
+    &.active {
+      .burgerMenu__line {
+        opacity: 1;
+        &:nth-child(1) {
+          transform: rotate(48deg);
+          transform-origin: left;
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-48deg);
+          transform-origin: left;
+        }
+      }
+    }
+    &__line {
+      position: absolute;
+      width: 100%;
+      background: #000;
+      height: 2px;
+      transition: var(--duration-animation);
+      transition-timing-function: var(--timing-animation);
+      &:nth-child(1) {
+        bottom: 99%;
+      }
+      &:nth-child(2) {
+        top: 50%;
+        translate: 0 -50%;
+        opacity: 0.6;
+      }
+      &:nth-child(3) {
+        top: 100%;
+        opacity: 0.3;
+      }
+    }
+  }
+  .dropdownMenu {
+    position: absolute;
+    cursor: default;
+    z-index: 1000;
+    width: 100vw;
+    max-width: 300px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    right: 0;
+    padding: 16px 0;
+    opacity: 0;
+    visibility: hidden;
+    top: 100%;
+    transition: var(--duration-animation);
+    transition-timing-function: var(--timing-animation);
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      top: 160%;
+    }
+    &__menuItem {
+      font-size: 2.2rem;
+      display: inline-block;
+      padding: 8px 16px;
+      width: 100%;
+      transition: var(--duration-animation);
+      transition-timing-function: var(--timing-animation);
+      &:hover {
+        color: var(--green-color);
+      }
+    }
+  }
+}
+
+.cardContent {
+  border: 2px solid #000;
+  border-radius: 32px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    color: #000;
+    font-weight: 600;
+  }
+}

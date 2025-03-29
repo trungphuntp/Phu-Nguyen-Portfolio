@@ -1,0 +1,40 @@
+@use "./mixins" as m;
+
+.header {
+  transition: var(--duration-animation);
+  transition-timing-function: var(--timing-animation);
+  &.normal {
+    .header__right {
+      &-menu {
+        .menuItem {
+          transition: var(--duration-animation);
+          transition-timing-function: var(--timing-animation);
+          &::after {
+            content: "";
+            display: block;
+            width: 0%;
+            height: 2px;
+            margin-top: 5px;
+            background: var(--green-color);
+            transition: var(--duration-animation);
+            transition-timing-function: var(--timing-animation);
+            border-radius: 999px;
+          }
+          &:hover {
+            color: var(--green-color);
+            opacity: 0.8;
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.scrollheader {
+  }
+  &.scrollheader.scrolling {
+    top: 0;
+  }
+}
