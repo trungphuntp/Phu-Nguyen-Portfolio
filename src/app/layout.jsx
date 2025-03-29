@@ -23,21 +23,23 @@ export const metadata = {
     "Frontend dev",
     "Frontend developer",
   ],
-  authors: [{ name: "Phu Nguyen", url: "https://yourwebsite.com" }],
+  authors: [
+    { name: "Phu Nguyen", url: "https://phu-nguyen-portfolio.vercel.app/" },
+  ],
   creator: "Phu Nguyen",
-  metadataBase: new URL("https://yourwebsite.com"),
+  metadataBase: new URL("https://phu-nguyen-portfolio.vercel.app/"),
   openGraph: {
-    title: "Tên Website của bạn",
+    title: "Phu Nguyen's Portfolio",
     description:
       "The website contains information related to Phu Nguyen and Phu Nguyen's work.",
-    url: "https://yourwebsite.com",
-    siteName: "Tên Website",
+    url: "https://phu-nguyen-portfolio.vercel.app/",
+    siteName: "Phu Nguyen's Portfolio",
     images: [
       {
-        url: "https://yourwebsite.com/og-image.jpg", // ảnh chia sẻ MXH
+        url: "/my-website.png",
         width: 1200,
         height: 630,
-        alt: "Mô tả ảnh",
+        alt: "My website",
       },
     ],
     locale: "vi_VN",
@@ -45,19 +47,19 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tên Website của bạn",
-    description: "Mô tả khi chia sẻ lên Twitter.",
-    images: ["https://yourwebsite.com/og-image.jpg"],
-    creator: "@your_twitter_handle",
+    title: "Phu Nguyen's Portfolio",
+    description:
+      "The website contains information related to Phu Nguyen and Phu Nguyen's work.",
+    images: ["/my-website.png"],
+    creator: "@trungphuntp",
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: "/favicon.ico",
   },
   themeColor: "#ffffff",
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
