@@ -1,16 +1,31 @@
 "use client";
+import { useLenis } from "@/app/context/LenisScroll/page";
 import React, { useEffect, useRef, useState } from "react";
 
 const Header = () => {
   const [activeMenuHamber, setActiveMenuHamber] = useState(false);
   const [showMenuHamber, setShowMenuHamber] = useState(false);
   const refHamberger = useRef();
+  const { lenisScroll } = useLenis();
 
   const handleTogleActiveHamber = (e) => {
     e?.preventDefault();
     e?.stopPropagation();
     setActiveMenuHamber((prevState) => !prevState);
   };
+
+  const handleScrollMenuClick = (e) => {
+    e?.preventDefault();
+    e?.stopPropagation();
+    if (e?.target) {
+      lenisScroll.scrollTo(e?.target?.getAttribute("href"), {
+        duration: 0.7, // thời gian cuộn (tính bằng giây)
+        offset: 0, // có thể thêm offset nếu cần
+        easing: (t) => t, // hàm easing nếu muốn custom
+      });
+    }
+  };
+
   useEffect(() => {
     const showHamberger = () => {
       if (window.innerWidth > 1024) {
@@ -43,7 +58,6 @@ const Header = () => {
     scrollRemoveDropdown();
 
     window.addEventListener("scroll", scrollRemoveDropdown);
-
     window.addEventListener("resize", showHamberger);
     document.addEventListener("click", removeDropdown);
     return () => {
@@ -68,22 +82,46 @@ const Header = () => {
             }`}
           >
             <li>
-              <a className="menuItem" href="#AboutSc">
+              <a
+                className="menuItem"
+                onClick={(e) => {
+                  handleScrollMenuClick(e);
+                }}
+                href="#AboutSc"
+              >
                 About
               </a>
             </li>
             <li>
-              <a className="menuItem" href="#SkillsSc">
+              <a
+                className="menuItem"
+                onClick={(e) => {
+                  handleScrollMenuClick(e);
+                }}
+                href="#SkillsSc"
+              >
                 Experience
               </a>
             </li>
             <li>
-              <a className="menuItem" href="#ProjectSc">
+              <a
+                className="menuItem"
+                onClick={(e) => {
+                  handleScrollMenuClick(e);
+                }}
+                href="#ProjectSc"
+              >
                 Projects
               </a>
             </li>
             <li>
-              <a className="menuItem" href="#ContactSc">
+              <a
+                className="menuItem"
+                onClick={(e) => {
+                  handleScrollMenuClick(e);
+                }}
+                href="#ContactSc"
+              >
                 Contact
               </a>
             </li>
@@ -102,22 +140,46 @@ const Header = () => {
             <nav className={`dropdownMenu ${activeMenuHamber ? "active" : ""}`}>
               <ul>
                 <li>
-                  <a className="dropdownMenu__menuItem" href="#AboutSc">
+                  <a
+                    className="dropdownMenu__menuItem"
+                    onClick={(e) => {
+                      handleScrollMenuClick(e);
+                    }}
+                    href="#AboutSc"
+                  >
                     About
                   </a>
                 </li>
                 <li>
-                  <a className="dropdownMenu__menuItem" href="#SkillsSc">
+                  <a
+                    className="dropdownMenu__menuItem"
+                    onClick={(e) => {
+                      handleScrollMenuClick(e);
+                    }}
+                    href="#SkillsSc"
+                  >
                     Experience
                   </a>
                 </li>
                 <li>
-                  <a className="dropdownMenu__menuItem" href="#ProjectSc">
+                  <a
+                    className="dropdownMenu__menuItem"
+                    onClick={(e) => {
+                      handleScrollMenuClick(e);
+                    }}
+                    href="#ProjectSc"
+                  >
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a className="dropdownMenu__menuItem" href="#ContactSc">
+                  <a
+                    className="dropdownMenu__menuItem"
+                    onClick={(e) => {
+                      handleScrollMenuClick(e);
+                    }}
+                    href="#ContactSc"
+                  >
                     Contact
                   </a>
                 </li>

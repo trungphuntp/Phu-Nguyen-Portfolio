@@ -1,6 +1,7 @@
 import Footer from "./components/Footer/page";
 import Header from "./components/Header/page";
 import ScrollHeader from "./components/ScrollHeader/page";
+import LenisProvider from "./context/LenisScroll/page";
 import "./globals.css";
 import StyledComponentsRegistry from "./libs/registry";
 import "./styles/main.scss";
@@ -76,12 +77,16 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="relative">
-        <StyledComponentsRegistry>
-          <Header />
-          <ScrollHeader />
-          {children}
-          <Footer />
-        </StyledComponentsRegistry>
+        {/* sử dụng scroll lenis */}
+        <LenisProvider>
+          {/* sử dụng styled component */}
+          <StyledComponentsRegistry>
+            <Header />
+            <ScrollHeader />
+            {children}
+            <Footer />
+          </StyledComponentsRegistry>
+        </LenisProvider>
       </body>
     </html>
   );

@@ -36,7 +36,7 @@ const ItemProject = styled.div`
 `;
 const MyProjectList = () => {
   return (
-    <div className="projectlist flex justify-center items-center gap-14 mt-14 flex-wrap flex-1 ">
+    <div className="projectlist flex justify-center items-stretch gap-14 mt-14 flex-wrap flex-1 ">
       {/* item */}
       {MyProject?.length > 0 &&
         MyProject?.map((project, index) => {

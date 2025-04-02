@@ -1,9 +1,8 @@
-import React from "react";
-import Image from "next/image";
+import ArrowNextSc from "@/app/components/ArrowNextSc/page";
+import MyIcon from "@/app/components/Icon/page";
 import MyButton from "@/app/components/MyButton/page";
 import Mylink from "@/app/constants/Mylink";
-import MyIcon from "@/app/components/Icon/page";
-import ArrowNextSc from "@/app/components/ArrowNextSc/page";
+import Image from "next/image";
 
 const HeroSc = () => {
   return (
@@ -11,7 +10,7 @@ const HeroSc = () => {
       id="herosc"
       className="herosc min-h-[calc(100vh-var(--header-height))] relative flex justify-center items-center"
     >
-      <div className="container">
+      <div className="container relative z-10">
         <div className="herosc__content mx-auto max-w-[800px] w-full flex items-center gap-8 justify-between max-lg:flex-col max-lg:justify-center ">
           {/* avatar */}
           <div className="herosc__content-avatar  max-w-[400px] w-full  aspect-[400/400] rounded-full overflow-hidden">

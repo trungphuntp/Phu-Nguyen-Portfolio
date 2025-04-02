@@ -33,6 +33,20 @@
   }
 
   &.scrollheader {
+    .header__right {
+      &-menu {
+        .menuItem {
+          transition: var(--duration-animation);
+          transition-timing-function: var(--timing-animation);
+          &:hover {
+            color: var(--green-color);
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
   &.scrollheader.scrolling {
     top: 0;

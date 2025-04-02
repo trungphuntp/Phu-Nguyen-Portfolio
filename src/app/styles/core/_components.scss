@@ -183,3 +183,11 @@
     font-weight: 600;
   }
 }
+
+.arrow-down {
+  transition: var(--duration-animation);
+  transition-timing-function: var(--timing-animation);
+  &:hover {
+    filter: var(--filter-green-color);
+  }
+}
