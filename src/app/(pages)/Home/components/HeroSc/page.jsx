@@ -1,16 +1,13 @@
 import ArrowNextSc from "@/app/components/ArrowNextSc/page";
-import MyIcon from "@/app/components/Icon/page";
-import MyButton from "@/app/components/MyButton/page";
-import Mylink from "@/app/constants/Mylink";
-import Image from "next/image";
+import HeroAction from "./component/HeroAction/page";
 
 const HeroSc = () => {
   return (
     <section
       id="herosc"
-      className="herosc min-h-[calc(100vh-var(--header-height))] relative flex justify-center items-center"
+      className="herosc min-h-[calc(100vh-var(--header-height))] relative flex justify-center items-center pt-[100px]"
     >
-      <div className="container relative z-10">
+      <div className="container flex-1">
         <div className="herosc__content mx-auto max-w-[800px] w-full flex items-center gap-8 justify-between max-lg:flex-col max-lg:justify-center ">
           {/* avatar */}
           <div className="herosc__content-avatar  max-w-[400px] w-full  aspect-[400/400] rounded-full overflow-hidden">
@@ -32,26 +29,7 @@ const HeroSc = () => {
             <p className="Myjob capitalize font-semibold text-[2.8rem] max-sm:text-[2.2rem]">
               Frontend Developer
             </p>
-            <div className="action grid grid-cols-2 gap-6 mt-4">
-              <MyButton variant={"outline"}>Download CV</MyButton>
-              <MyButton linkin={"#ContactSc"}>Contact Info</MyButton>
-              <MyIcon link={Mylink.github} className={"ml-auto"}>
-                <Image
-                  src={"/github.png"}
-                  alt="github"
-                  height={32}
-                  width={32}
-                />
-              </MyIcon>
-              <MyIcon link={Mylink.linkedin}>
-                <Image
-                  src={"/linkedin.png"}
-                  alt="github"
-                  height={32}
-                  width={32}
-                />
-              </MyIcon>
-            </div>
+            <HeroAction />
           </div>
         </div>
       </div>

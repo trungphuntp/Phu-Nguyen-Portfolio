@@ -1,14 +1,14 @@
 "use client";
+import { useContextHeader } from "@/app/context/ContextHeader/page";
 import { useLenis } from "@/app/context/LenisScroll/page";
 import React, { useEffect, useRef, useState } from "react";
 
 const ScrollHeader = () => {
-  const [isShowScrollMenu, setIsShowScrollMenu] = useState(false);
-
+  const { isShowScrollMenu } = useContextHeader();
+  const { lenisScroll } = useLenis();
   const [activeMenuHamber, setActiveMenuHamber] = useState(false);
   const [showMenuHamber, setShowMenuHamber] = useState(false);
   const refHamberger = useRef();
-  const { lenisScroll } = useLenis();
 
   const handleTogleActiveHamber = (e) => {
     e?.preventDefault();
@@ -35,23 +35,6 @@ const ScrollHeader = () => {
   };
 
   useEffect(() => {
-    const handleSetScrolling = () => {
-      if (innerWidth > 640) {
-        if (scrollY > 170) {
-          setIsShowScrollMenu(true);
-        } else {
-          setIsShowScrollMenu(false);
-        }
-      } else {
-        if (scrollY > 80) {
-          setIsShowScrollMenu(true);
-        } else {
-          setIsShowScrollMenu(false);
-        }
-      }
-    };
-    handleSetScrolling();
-
     const showHamberger = () => {
       if (window.innerWidth > 1024) {
         setShowMenuHamber(false);
@@ -71,13 +54,9 @@ const ScrollHeader = () => {
     };
 
     window.addEventListener("resize", showHamberger);
-    window.addEventListener("scroll", handleSetScrolling);
-
     document.addEventListener("click", removeDropdown);
     return () => {
       window.removeEventListener("resize", showHamberger);
-      window.removeEventListener("scroll", handleSetScrolling);
-
       document.removeEventListener("click", removeDropdown);
     };
   }, []);

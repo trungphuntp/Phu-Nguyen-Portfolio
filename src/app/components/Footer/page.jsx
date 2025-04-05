@@ -1,8 +1,9 @@
 import React from "react";
+import ArrowNextSc from "../ArrowNextSc/page";
 
 const Footer = () => {
   return (
-    <footer className="footer min-h-[25vh] ">
+    <footer className="footer min-h-[25vh] relative">
       <div className="containe text-center">
         <ul className="footer__menu flex justify-center items-center text-[24px] text-black gap-[30px] min-h-[15vh] max-sm:flex-col">
           <li>
@@ -30,6 +31,10 @@ const Footer = () => {
           <p>Copyright © 2025 Phu Nguyen. All Rights Reserved.</p>
         </div>
       </div>
+      <ArrowNextSc
+        className={`rotate-180 bottom-[30%]`}
+        linkNextSc={"herosc"}
+      />
     </footer>
   );
 };

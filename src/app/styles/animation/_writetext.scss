@@ -1,0 +1,88 @@
+@use "../core/mixins" as m;
+
+.writetextcontainer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.writetextcontainer p:nth-child(1) {
+  color: #498ac4;
+  font-family: "Fira Code", monospace;
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin: 0 0 0 35%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 170px;
+  animation: type 2s steps(40, end) forwards;
+
+  @include m.lg {
+    font-size: 1.8rem;
+  }
+}
+
+.writetextcontainer p:nth-child(2) {
+  opacity: 0;
+  font-family: "Work Sans", sans-serif;
+  margin: 0 auto auto auto;
+  background: linear-gradient(#059212, #06d001, #9bec00);
+  font-weight: 800;
+  font-size: 6rem;
+  max-width: 100%;
+  width: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  animation: shring-animation 2.2s steps(40, end) 2s forwards,
+    blink 0.5s step-end infinite alternate;
+
+  @include m.lg {
+    font-size: 6rem;
+  }
+}
+
+@keyframes shring-animation {
+  0% {
+    background-position: 0 0;
+    opacity: 0;
+    width: 0;
+  }
+  1% {
+    background-position: 0 0;
+    opacity: 1;
+    border-right: 1px solid var(--green-color);
+  }
+  50% {
+    background-position: 150px 0;
+    opacity: 1;
+    border-right: 1px solid var(--green-color);
+  }
+  100% {
+    background-position: 400px 0;
+    opacity: 1;
+    border-right: 1px solid var(--green-color);
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  1%,
+  99% {
+    border-right: 1px solid var(--green-color);
+  }
+  100% {
+    border-right: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

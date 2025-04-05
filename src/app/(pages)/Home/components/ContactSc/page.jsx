@@ -1,7 +1,5 @@
-import ArrowNextSc from "@/app/components/ArrowNextSc/page";
 import MyTextbox from "@/app/components/MyTextbox/page";
 import Image from "next/image";
-import React from "react";
 
 const ContactSc = () => {
   return (
@@ -44,7 +42,6 @@ const ContactSc = () => {
           </a>
         </div>
       </div>
-      <ArrowNextSc className={`rotate-180`} linkNextSc={"herosc"} />
     </section>
   );
 };
