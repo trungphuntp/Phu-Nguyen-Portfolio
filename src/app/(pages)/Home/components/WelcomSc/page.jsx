@@ -1,20 +1,22 @@
 "use client";
 
 import WelcomComponent from "@/app/components/WelcomComponent/page";
-import gsap from "gsap";
-import { useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useContextHeader } from "@/app/context/ContextHeader/page";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const WelcomSc = () => {
-  const { isShowScrollMenu, handleSetShowScroll } = useContextHeader();
+const WelcomSc = ({}) => {
+  const { handleSetShowScroll } = useContextHeader();
   const sectionRef = useRef(null);
   const elA = useRef(null);
   const elB = useRef(null);
   const elC = useRef(null);
   const textboxRef = useRef(null);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       // scroll animation
@@ -48,26 +50,21 @@ const WelcomSc = () => {
         },
         1
       );
+
+      // header scroll
+      const trigger = ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "bottom top",
+        onLeave: () => {
+          handleSetShowScroll?.(true);
+        },
+        onEnterBack: () => {
+          handleSetShowScroll?.(false);
+        },
+        markers: false,
+      });
     }, sectionRef);
-    // Trigger riêng cho việc detect scroll ra khỏi section
-    const trigger = ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: "top top",
-      end: "bottom top",
-      onEnter: () => {
-        handleSetShowScroll?.(false);
-      },
-      onLeave: () => {
-        handleSetShowScroll?.(true);
-      },
-      onEnterBack: () => {
-        handleSetShowScroll?.(false);
-      },
-      onLeaveBack: () => {
-        handleSetShowScroll?.(true);
-      },
-      markers: false,
-    });
 
     return () => {
       ctx.revert();
@@ -77,7 +74,7 @@ const WelcomSc = () => {
 
   return (
     <section
-      className="WelcomSc relative flex items-center bg-black h-screen overflow-x-hidden"
+      className=" WelcomSc relative flex items-center bg-black h-screen overflow-x-hidden"
       ref={sectionRef}
     >
       <div
