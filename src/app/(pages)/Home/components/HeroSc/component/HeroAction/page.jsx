@@ -42,7 +42,7 @@ const HeroAction = () => {
       <MyIcon link={Mylink.linkedin}>
         <Image src={"/linkedin.png"} alt="github" height={32} width={32} />
       </MyIcon>
-      <MyIcon link={Mylink.linkedin} className={"ml-auto"}>
+      <MyIcon link={Mylink.facebook} className={"ml-auto"}>
         <Image src={"/facebook_icon.png"} alt="github" height={32} width={32} />
       </MyIcon>
     </div>
