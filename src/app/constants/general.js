@@ -43,7 +43,7 @@ export const MyProject = [
     name: "Fiverr",
     linkGithub: "https://github.com/trungphuntp/Fiverr-CyberSoft",
     linkDemo: "https://fiverr-cyber-soft.vercel.app/",
-    linkYoutube: "https://www.youtube.com/watch?v=JP8hhoEdTJM",
+    linkYoutube: "https://www.youtube.com/watch?v=3Zm7eM7gm_8&t=4s",
   },
   {
     image: "/CFD Store Image.png",
