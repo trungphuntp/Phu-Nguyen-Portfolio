@@ -25,7 +25,7 @@ const AboutSc = () => {
           </div>
           <div className="mainContent__content ">
             <div className="mainContent__content-cards flex gap-[35px] max-sm:flex-col">
-              <div className="cardContent w-1/2 max-sm:w-full">
+              {/* <div className="cardContent w-1/2 max-sm:w-full">
                 <Image
                   src={"/experience.png"}
                   alt="my experience"
@@ -35,26 +35,51 @@ const AboutSc = () => {
                 <h4 className="cardContent__title">Experience</h4>
                 <p className="cardContent__item">2+ years</p>
                 <p className="cardContent__item">Frontend Development</p>
-              </div>
-              <div className="cardContent w-1/2 max-sm:w-full">
+              </div> */}
+              <div className="cardContent w-full max-sm:w-full">
                 <Image
+                  className="cardContent__icon"
                   src={"/education.png"}
                   alt="my education"
                   width={32}
                   height={32}
                 />
                 <h4 className="cardContent__title">Education</h4>
-                <p className="cardContent__item">B.Sc. Bachelors Degree</p>
-                <p className="cardContent__item">M.Sc. Masters Degree</p>
+                <p className="cardContent__item">
+                  CFD Circle Front-end Master certificate
+                </p>
+
+                <p className="cardContent__item">
+                  Bach Viet Polytechnic bachelor's degree
+                </p>
+                <p className="cardContent__item">
+                  Certificate of soft skills training
+                </p>
+                <p className="cardContent__item">{`EnglishScore Certificate (B1)`}</p>
+                <a
+                  target="_blank"
+                  href={`https://drive.google.com/drive/folders/1Dx3qmeN2zd7ceArCqR_Sa0wHEcPZnwEf`}
+                  className="evidenceLink"
+                >
+                  evidence
+                  <svg
+                    className="icon h-[12px] w-[12px]"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512"
+                  >
+                    <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                  </svg>
+                </a>
               </div>
             </div>
             <div className="mainContent__content-mystory mt-14">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-              reprehenderit et laborum, rem, dolore eum quod voluptate
-              exercitationem nobis, nihil esse debitis maxime facere minus sint
-              delectus velit in eos quo officiis explicabo deleniti dignissimos.
-              Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-              reiciendis ea magnam? Nulla, impedit fuga!
+              I'm a motivated and curious front-end developer with a passion for
+              clean code and intuitive user interfaces. Although I’m just
+              starting my career, I’ve spent time building small projects,
+              learning modern frameworks, and staying up-to-date with the latest
+              trends in web development. I’m excited to join a team where I can
+              learn, contribute, and grow.
             </div>
           </div>
         </div>
